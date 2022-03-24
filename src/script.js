@@ -17,13 +17,16 @@ function displayBook() {
   const newTdAuthor = document.createElement("td")
   const newTdPages = document.createElement("td")
   const newTdStatus = document.createElement("td")
+  const newTdRemove = document.createElement("td")
+  const removeImage = new Image()
+  removeImage.src = "../assets/trash-can-outline.png";
 
-  newTdTitle.textContent = `${myLibrary[0].title}`
-  newTdAuthor.textContent = `${myLibrary[0].author}`
-  newTdPages.textContent = `${myLibrary[0].noOfPages}`
-  newTdStatus.textContent = `${myLibrary[0].status}`
+  newTdTitle.textContent = `${myLibrary[myLibrary.length - 1].title}`
+  newTdAuthor.textContent = `${myLibrary[myLibrary.length - 1].author}`
+  newTdPages.textContent = `${myLibrary[myLibrary.length - 1].noOfPages}`
+  newTdStatus.textContent = `${myLibrary[myLibrary.length - 1].status}`
 
-  newTr.append(newTdTitle, newTdAuthor, newTdPages, newTdStatus);
+  newTr.append(newTdTitle, newTdAuthor, newTdPages, newTdStatus, removeImage);
 
   document.getElementById('table').appendChild(newTr);
 }
