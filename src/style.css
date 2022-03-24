@@ -1,0 +1,13 @@
+#project-title {
+  text-align: center;
+  font-size: 50px;
+}
+
+
+
+.form-container form {
+  border: 5px solid red;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
