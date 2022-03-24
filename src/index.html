@@ -11,8 +11,19 @@
 
   <h1 id="project-title">Library</h1>
 
+  <div id="initial-button-container">
+    <button id="start-library">Start building your library by adding a book!</button>
+  </div>
+
+
   <div class="form-container">
+
     <form action="" method="post" class="form-example">
+      <span id="close-button">
+        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+      </svg>
+      </span>
       <div class="form-example">
         <label for="title">What is the title of the book?</label>
         <input type="text" name="title" id="title" required>
@@ -30,11 +41,35 @@
         <input type="checkbox" name="checkbox" id="checkbox" required>
       </div>
       <div class="form-example">
-        <input type="submit" value="Add Book!">
+        <input type="submit" value="Add Book!" id="submit-button">
       </div>
     </form>
   </div>
 
-  <script src="../src/script.js"></script>
+
+    <table id="table">
+      <colgroup span="4"></colgroup>
+      <tr >
+        <th>Title</th>
+        <th>Author</th>
+        <th>Pages</th>
+        <th>Read</th>
+      </tr>
+      <tr>
+        <td>USA</td>
+        <td>Washington, D.C.</td>
+        <td>309 million</td>
+        <td>English</td>
+      </tr>
+      <tr>
+        <td>Sweden</td>
+        <td>Stockholm</td>
+        <td>9 million</td>
+        <td>Swedish</td>
+      </tr>
+    </table>
+  
+
+<script src="../src/script.js"></script>
 </body>
 </html>

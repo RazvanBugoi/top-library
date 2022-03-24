@@ -3,11 +3,42 @@
   font-size: 50px;
 }
 
+#initial-button-container {
+  text-align: center;
+  margin: 20px auto;
+}
 
+#initial-button-container > button {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: orange;
+}
+
+#initial-button-container > button:hover {
+  cursor: pointer;
+}
 
 .form-container form {
   border: 5px solid red;
   max-width: 300px;
   margin: auto;
   text-align: center;
+  position: relative;
+  padding: 30px 20px;
+}
+
+.form-container > form > span {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+input[type=submit] {
+  color: red;
+}
+
+table {
+    border: 1px solid #333;
+    margin: 20px auto;
+    font-size: 40px;
 }
