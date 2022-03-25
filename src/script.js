@@ -11,7 +11,7 @@ function Book(title, author, noOfPages, status) {
   }
 }
 
-function displayBook() {
+function addBookToLibrary(counter) {
   const newTr = document.createElement("tr")
   const newTdTitle = document.createElement("td")
   const newTdAuthor = document.createElement("td")
@@ -19,7 +19,9 @@ function displayBook() {
   const newTdStatus = document.createElement("td")
   const newTdRemove = document.createElement("td")
   const removeImage = new Image()
-  removeImage.src = "../assets/trash-can-outline.png";
+  removeImage.src = "../assets/trash-can-outline.png"
+  removeImage.alt = "Remove Book Icon"
+  removeImage.className = "remove-icon"
 
   newTdTitle.textContent = `${myLibrary[myLibrary.length - 1].title}`
   newTdAuthor.textContent = `${myLibrary[myLibrary.length - 1].author}`
@@ -27,8 +29,16 @@ function displayBook() {
   newTdStatus.textContent = `${myLibrary[myLibrary.length - 1].status}`
 
   newTr.append(newTdTitle, newTdAuthor, newTdPages, newTdStatus, removeImage);
+  
+
+  newTr.dataset.index = counter;
+
 
   document.getElementById('table').appendChild(newTr);
+}
+
+function removeBookFromLibrary() {
+  myLibrary.forEach((book) => console.log(book))
 }
 
 const startLibraryButton = document.getElementById('start-library')
@@ -50,11 +60,13 @@ closeButton.onclick = () => {
   formContainer[0].style.display = 'none';
 }
 
+
+let counter = 1;
 submitButton.onclick = (event) => {
   event.preventDefault();
-
+  counter ++
   const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
   myLibrary.push(book);
 
-  displayBook()
+  addBookToLibrary(counter)
 }
