@@ -43,13 +43,13 @@ function addBookToLibrary(counter) {
 
   document.getElementById('table').appendChild(newTr);
 
-  removeIcons = document.getElementsByClassName('remove-icons')
+  removeIcons = document.querySelectorAll(".remove-icons")
 
 
   for (let i=0; i<removeIcons.length; i++) {
     removeIcons[i].onclick = () => {
-    console.log(removeIcons[i])
     console.log(removeIcons[i].id)
+    myLibrary.splice(`${removeIcons[i]}`, 1)
     let bookId = removeIcons[i].id
     const removeTr = document.getElementById(`${bookId}`)
     removeBook(removeTr)
