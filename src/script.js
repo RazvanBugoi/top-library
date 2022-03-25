@@ -11,6 +11,12 @@ function Book(title, author, noOfPages, status) {
   }
 }
 
+
+let removeIcons;
+
+
+
+
 function addBookToLibrary(counter) {
   const newTr = document.createElement("tr")
   const newTdTitle = document.createElement("td")
@@ -21,7 +27,8 @@ function addBookToLibrary(counter) {
   const removeImage = new Image()
   removeImage.src = "../assets/trash-can-outline.png"
   removeImage.alt = "Remove Book Icon"
-  removeImage.className = "remove-icon"
+  removeImage.className = "remove-icons"
+  removeImage.id = `remove-icon${counter}`
 
   newTdTitle.textContent = `${myLibrary[myLibrary.length - 1].title}`
   newTdAuthor.textContent = `${myLibrary[myLibrary.length - 1].author}`
@@ -35,10 +42,23 @@ function addBookToLibrary(counter) {
 
 
   document.getElementById('table').appendChild(newTr);
+
+  removeIcons = document.getElementsByClassName('remove-icons')
+
+
+  for (let i=0; i<removeIcons.length; i++) {
+    removeIcons[i].onclick = () => {
+    console.log(removeIcons[i])
+    console.log(removeIcons[i].id)
+    let bookId = removeIcons[i].id
+    const removeTr = document.getElementById(`${bookId}`)
+    removeBook(removeTr)
+    }
+  }
 }
 
-function removeBookFromLibrary() {
-  myLibrary.forEach((book) => console.log(book))
+function removeBook(book) {
+  book.parentElement.remove()
 }
 
 const startLibraryButton = document.getElementById('start-library')
@@ -61,12 +81,17 @@ closeButton.onclick = () => {
 }
 
 
-let counter = 1;
+let counter = 0;
 submitButton.onclick = (event) => {
   event.preventDefault();
-  counter ++
+  
+
   const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
   myLibrary.push(book);
+  counter = myLibrary.indexOf(book)
+
+  // counter ++
+  console.log(counter)
 
   addBookToLibrary(counter)
 }
