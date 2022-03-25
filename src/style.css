@@ -41,4 +41,13 @@ table {
     border: 1px solid #333;
     margin: 20px auto;
     font-size: 40px;
+    width: 80%;
+}
+
+tr[data-index] {
+  text-align: center;
+}
+
+table  tr  th {
+  color: red;
 }
