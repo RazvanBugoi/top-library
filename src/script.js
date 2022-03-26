@@ -69,11 +69,29 @@ function addBookToLibrary(counter) {
   }
 
   booksStatus = document.querySelectorAll(".status")
-  toggleReadStatus(newTdStatus)
+
+  booksStatus.forEach((book, index) => {
+    book.onclick = () => {
+      console.log(index)
+      // const currentIndex = Number(`${book.id}`.match(/\d/gm).join(""))
+      // console.log(currentIndex)
+      const currentTd = document.getElementById(`${book.id}`)
+      console.log(currentTd)
+      if (myLibrary[index].status === true) {
+          myLibrary[index].status = false
+          currentTd.textContent = `${myLibrary[index].status}`
+      } else if(myLibrary[index].status === false){
+        myLibrary[index].status = true
+        currentTd.textContent = `${myLibrary[index].status}`
+      }
+    }
+  })
 }
 
 function removeBook(book) {
   book.parentElement.remove()
+  console.log(myLibrary)
+  console.log(counter)
 }
 
 
@@ -92,29 +110,14 @@ submitButton.onclick = (event) => {
 
   const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
   myLibrary.push(book);
-  counter = myLibrary.indexOf(book)
+
 
   console.log(counter)
 
   addBookToLibrary(counter)
+  counter++
 }
 
-function toggleReadStatus(newTdStatus) {
-  booksStatus.forEach((element) => {
-    element.onclick = () => {
-      const currentCounter = element.id.slice(-1)
-      console.log(currentCounter)
-      console.log(newTdStatus)
-      newTdStatus.id.replace(/\d/g, currentCounter);
-      if (myLibrary[currentCounter].status == "true") {
-        myLibrary[currentCounter].status = "false"
-        console.log(newTdStatus.id)
-        newTdStatus.textContent = "false"
-      } else {
-        myLibrary[currentCounter].status = "true"
-        console.log(newTdStatus.id)
-        newTdStatus.textContent = "true"
-      }
-    }
-  })
-}
+
+
+// everytime you click delete button , update all books with the new indexes
