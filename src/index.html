@@ -32,19 +32,19 @@
         </span>
         <div class="form-example">
           <label for="title">What is the title of the book?</label>
-          <input class ="form-input" type="text" name="title" id="title" required>
+          <input class ="form-input" type="text" name="title" id="title" minlength="3" maxlength="20" required>
         </div>
         <div class="form-example">
           <label for="author">Who is the book author?</label>
-          <input class ="form-input" type="input" name="author" id="author" required>
+          <input class ="form-input" type="input" name="author" id="author" minlength="3" maxlength="20" required>
         </div>
         <div class="form-example">
           <label for="pages">How many pages does the book have?</label>
-          <input class ="form-input" type="number" name="pages" id="pages" required>
+          <input class ="form-input" type="number" name="pages" id="pages" min="1" max="999" required>
         </div>
         <div class="form-example">
           <label for="checkbox">Have you read the book? </label>
-          <input type="checkbox" name="checkbox" id="checkbox" required>
+          <input type="checkbox" name="checkbox" id="checkbox">
         </div>
         <div class="form-example">
           <input type="submit" value="Add Book!" id="submit-button">
