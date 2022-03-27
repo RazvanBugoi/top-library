@@ -26,6 +26,8 @@ function Book(title, author, noOfPages, status, id) {
 
 function addBookToLibrary(counter) {
   const newTr = document.createElement("tr")
+  newTr.className = "table-rows";
+  newTr.classList.add(`${myLibrary[myLibrary.length - 1].status == false ? "unread" : "read"}`)
   const newTdTitle = document.createElement("td")
   const newTdAuthor = document.createElement("td")
   const newTdPages = document.createElement("td")
@@ -67,9 +69,11 @@ function addBookToLibrary(counter) {
         if(book.status === true) {
           book.status = false
           e.target.innerHTML = 'Unread'
+          e.target.parentElement.classList.replace("read", "unread")
         }else if(book.status === false) {
           book.status = true
           e.target.innerHTML = 'Read'
+          e.target.parentElement.classList.replace("unread", "read")
         }
       }
     })

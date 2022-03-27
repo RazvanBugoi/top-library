@@ -36,7 +36,7 @@
 .main-wrapper #initial-button-container > button {
   padding: 10px;
   border-radius: 10px;
-  background-color: orange;
+  background-color: #f97316;
 }
 
 .main-wrapper #initial-button-container > button:hover {
@@ -44,7 +44,6 @@
 }
 
 .main-wrapper .form-container form {
-  border: 2px solid #cbd5e1;
   max-width: 300px;
   margin: auto;
   text-align: center;
@@ -52,6 +51,7 @@
   padding: 30px 20px;
   background-color: #f8fafc;
   border-radius: 10px;
+  box-shadow: 2px 5px 3px #94a3b8;
 }
 
 .main-wrapper .form-container > form > span {
@@ -68,6 +68,7 @@
     width: 80%;
     text-align: center;
     border-collapse: collapse;
+    background-color: #f8fafc;
 }
 
 .main-wrapper tr[data-index] {
@@ -75,32 +76,50 @@
 }
 
 .main-wrapper table  tr  th {
-  color: red;
+  color: #171717;
+  border-bottom: 2px solid #171717;
 }
 
 .main-wrapper tbody tr:nth-child(1) {
-  background-color: #ff33cc;
-}
-
-.table-wrapper {
-  max-height: 800px;
-  position: relative;
-  overflow-y: scroll;
+  background-color: #f97316;
 }
 
 form input[type="submit"] {
-  padding: 5px 10px 5px 10px;
+  padding: 12px 24px 12px 24px;
   font-size: 18px;
   font-weight: 700;
-  background-color: #ef4444;
+  background-color: #f97316;
   color: #1c1917;
   margin-top: 15px;
+  border: none;
+  border-radius: 15px;
 }
 
 form input[type="submit"]:hover {
   cursor: pointer;
+  background-color: #ea580c;
 }
 
 .form-example {
   padding-top: 7px;
+}
+
+tr.table-rows {
+  border-bottom: 2px solid #171717;
+}
+
+.read {
+  background-color: #4ade80;
+}
+
+.unread {
+  background-color: #f87171;
+}
+
+.status:hover , .remove-icons:hover {
+  cursor: pointer;
+}
+
+input:focus-visible {
+  outline: none;
 }
