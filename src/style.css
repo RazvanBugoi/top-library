@@ -44,12 +44,14 @@
 }
 
 .main-wrapper .form-container form {
-  border: 5px solid red;
+  border: 2px solid #cbd5e1;
   max-width: 300px;
   margin: auto;
   text-align: center;
   position: relative;
   padding: 30px 20px;
+  background-color: #f8fafc;
+  border-radius: 10px;
 }
 
 .main-wrapper .form-container > form > span {
@@ -58,9 +60,6 @@
   top: 5px;
 }
 
-.main-wrapper input[type=submit] {
-  color: red;
-}
 
 .main-wrapper table {
     border: 1px solid #333;
@@ -68,6 +67,7 @@
     font-size: 40px;
     width: 80%;
     text-align: center;
+    border-collapse: collapse;
 }
 
 .main-wrapper tr[data-index] {
@@ -80,4 +80,27 @@
 
 .main-wrapper tbody tr:nth-child(1) {
   background-color: #ff33cc;
+}
+
+.table-wrapper {
+  max-height: 800px;
+  position: relative;
+  overflow-y: scroll;
+}
+
+form input[type="submit"] {
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #ef4444;
+  color: #1c1917;
+  margin-top: 15px;
+}
+
+form input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.form-example {
+  padding-top: 7px;
 }
