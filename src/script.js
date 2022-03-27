@@ -42,7 +42,7 @@ function addBookToLibrary(counter) {
   newTdTitle.textContent = `${myLibrary[myLibrary.length - 1].title}`
   newTdAuthor.textContent = `${myLibrary[myLibrary.length - 1].author}`
   newTdPages.textContent = `${myLibrary[myLibrary.length - 1].noOfPages}`
-  newTdStatus.textContent = `${myLibrary[myLibrary.length - 1].status}`
+  newTdStatus.textContent = `${myLibrary[myLibrary.length - 1].status == false ? "Unread" : "Read"}`
 
   newTr.append(newTdTitle, newTdAuthor, newTdPages, newTdStatus, removeImage);
 
@@ -52,12 +52,7 @@ function addBookToLibrary(counter) {
 
 
   for (let i=0; i<removeIcons.length; i++) {
-    removeIcons[i].onclick = () => {
-    myLibrary.splice(`${i}`, 1)
-    let bookId = removeIcons[i].id
-    const removeTr = document.getElementById(`${bookId}`)
-    removeBook(removeTr)
-    }
+    removeIcons[i].onclick = removeBook
   }
 
   booksStatus = document.querySelectorAll(".status")
@@ -71,19 +66,26 @@ function addBookToLibrary(counter) {
       if (e.target.id == book.id) {
         if(book.status === true) {
           book.status = false
-          e.target.innerHTML = 'false'
+          e.target.innerHTML = 'Unread'
         }else if(book.status === false) {
           book.status = true
-          e.target.innerHTML = 'true'
+          e.target.innerHTML = 'Read'
         }
       }
     })
   }
 }
 
-function removeBook(book) {
-  book.parentElement.remove()
-}
+function removeBook(e) {
+  myLibrary.forEach((book, index) => {
+    if (e.target.previousElementSibling.id == book.id) {
+      myLibrary.splice(`${index}`, 1)
+      e.target.parentElement.remove()
+      }
+    if (myLibrary.length == 0) counter = 0;
+    }
+  )}
+
 
 
 startLibraryButton.onclick = () => {
