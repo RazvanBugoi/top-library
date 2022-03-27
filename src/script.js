@@ -15,15 +15,12 @@ const bookPages = document.getElementById('pages')
 const bookStatus = document.getElementById('checkbox')
 
 
-function Book(title, author, noOfPages, status) {
+function Book(title, author, noOfPages, status, id) {
   this.title = title
   this.author = author
   this.noOfPages = noOfPages
   this.status = status
-  
-  this.info = () => {
-    return `${title} by ${author}, ${noOfPages} pages, ${status}`
-  }
+  this.id = id;
 }
 
 
@@ -34,7 +31,7 @@ function addBookToLibrary(counter) {
   const newTdPages = document.createElement("td")
   const newTdStatus = document.createElement("td")
   newTdStatus.className = "status"
-  newTdStatus.id = `book-status${counter}`
+  newTdStatus.id = Number(`${counter}`)
   const newTdRemove = document.createElement("td")
   const removeImage = new Image()
   removeImage.src = "../assets/trash-can-outline.png"
@@ -42,17 +39,12 @@ function addBookToLibrary(counter) {
   removeImage.className = "remove-icons"
   removeImage.id = `remove-icon${counter}`
 
-
   newTdTitle.textContent = `${myLibrary[myLibrary.length - 1].title}`
   newTdAuthor.textContent = `${myLibrary[myLibrary.length - 1].author}`
   newTdPages.textContent = `${myLibrary[myLibrary.length - 1].noOfPages}`
   newTdStatus.textContent = `${myLibrary[myLibrary.length - 1].status}`
 
   newTr.append(newTdTitle, newTdAuthor, newTdPages, newTdStatus, removeImage);
-  
-
-  newTr.dataset.index = counter;
-
 
   document.getElementById('table').appendChild(newTr);
 
@@ -61,7 +53,7 @@ function addBookToLibrary(counter) {
 
   for (let i=0; i<removeIcons.length; i++) {
     removeIcons[i].onclick = () => {
-    myLibrary.splice(`${removeIcons[i]}`, 1)
+    myLibrary.splice(`${i}`, 1)
     let bookId = removeIcons[i].id
     const removeTr = document.getElementById(`${bookId}`)
     removeBook(removeTr)
@@ -70,28 +62,27 @@ function addBookToLibrary(counter) {
 
   booksStatus = document.querySelectorAll(".status")
 
-  booksStatus.forEach((book, index) => {
-    book.onclick = () => {
-      console.log(index)
-      // const currentIndex = Number(`${book.id}`.match(/\d/gm).join(""))
-      // console.log(currentIndex)
-      const currentTd = document.getElementById(`${book.id}`)
-      console.log(currentTd)
-      if (myLibrary[index].status === true) {
-          myLibrary[index].status = false
-          currentTd.textContent = `${myLibrary[index].status}`
-      } else if(myLibrary[index].status === false){
-        myLibrary[index].status = true
-        currentTd.textContent = `${myLibrary[index].status}`
-      }
-    }
+  booksStatus.forEach((book) => {
+    book.onclick = changeStatus
   })
+
+  function changeStatus(e) {
+    myLibrary.forEach((book) => {
+      if (e.target.id == book.id) {
+        if(book.status === true) {
+          book.status = false
+          e.target.innerHTML = 'false'
+        }else if(book.status === false) {
+          book.status = true
+          e.target.innerHTML = 'true'
+        }
+      }
+    })
+  }
 }
 
 function removeBook(book) {
   book.parentElement.remove()
-  console.log(myLibrary)
-  console.log(counter)
 }
 
 
@@ -108,7 +99,7 @@ submitButton.onclick = (event) => {
   event.preventDefault();
   
 
-  const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked);
+  const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked, counter);
   myLibrary.push(book);
 
 
@@ -117,7 +108,3 @@ submitButton.onclick = (event) => {
   addBookToLibrary(counter)
   counter++
 }
-
-
-
-// everytime you click delete button , update all books with the new indexes
