@@ -45,11 +45,10 @@ function addBookToLibrary(counter) {
   newTdAuthor.textContent = `${myLibrary[myLibrary.length - 1].author}`
   newTdPages.textContent = `${myLibrary[myLibrary.length - 1].noOfPages}`
   newTdStatus.textContent = `${myLibrary[myLibrary.length - 1].status == false ? "Unread" : "Read"}`
-
+  
   newTr.append(newTdTitle, newTdAuthor, newTdPages, newTdStatus, removeImage);
 
   document.getElementById('table').appendChild(newTr);
-
   removeIcons = document.querySelectorAll(".remove-icons")
 
 
@@ -103,14 +102,8 @@ closeButton.onclick = () => {
 
 submitButton.onclick = (event) => {
   event.preventDefault();
-  
-
   const book = new Book(bookTitle.value, bookAuthor.value, bookPages.value, bookStatus.checked, counter);
   myLibrary.push(book);
-
-
-  console.log(counter)
-
   addBookToLibrary(counter)
   counter++
 }

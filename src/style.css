@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 .main-container {
@@ -21,26 +22,19 @@
 
 .main-wrapper {
   position: relative;
+  margin-top: 25px;
 }
 
 .main-wrapper #project-title {
   text-align: center;
-  font-size: 50px;
+  font-size: 60px;
+  font-weight: 900;
+  color: #111827;
 }
 
 .main-wrapper #initial-button-container {
   text-align: center;
   margin: 20px auto;
-}
-
-.main-wrapper #initial-button-container > button {
-  padding: 10px;
-  border-radius: 10px;
-  background-color: #f97316;
-}
-
-.main-wrapper #initial-button-container > button:hover {
-  cursor: pointer;
 }
 
 .main-wrapper .form-container form {
@@ -64,7 +58,7 @@
 .main-wrapper table {
     border: 1px solid #333;
     margin: 20px auto;
-    font-size: 40px;
+    font-size: 30px;
     width: 80%;
     text-align: center;
     border-collapse: collapse;
@@ -82,20 +76,27 @@
 
 .main-wrapper tbody tr:nth-child(1) {
   background-color: #f97316;
+  font-size: 40px;
+  text-transform: uppercase;
 }
 
-form input[type="submit"] {
-  padding: 12px 24px 12px 24px;
+form input[type="submit"],
+#start-library {
+  padding: 10px 20px 10px 20px;
   font-size: 18px;
   font-weight: 700;
   background-color: #f97316;
   color: #1c1917;
   margin-top: 15px;
   border: none;
-  border-radius: 15px;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  border-radius: 0.3rem;
 }
 
-form input[type="submit"]:hover {
+
+form input[type="submit"]:hover,
+#start-library:hover {
   cursor: pointer;
   background-color: #ea580c;
 }
@@ -120,6 +121,28 @@ tr.table-rows {
   cursor: pointer;
 }
 
-input:focus-visible {
-  outline: none;
+.form-input {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #94a3b8;
+  outline: 0;
+  box-shadow: 0 0 0 0.1rem #94a3b8;
+}
+
+#first-table-row th:nth-child(n) {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
