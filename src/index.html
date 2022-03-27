@@ -9,57 +9,63 @@
 </head>
 <body>
 
-  <h1 id="project-title">Library</h1>
-
-  <div id="initial-button-container">
-    <button id="start-library">Start building your library by adding a book!</button>
-  </div>
-
-
-  <div class="form-container">
-
-    <form action="" method="post" class="form-example">
-      <span id="close-button">
-        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
-      </svg>
-      </span>
-      <div class="form-example">
-        <label for="title">What is the title of the book?</label>
-        <input type="text" name="title" id="title" required>
-      </div>
-      <div class="form-example">
-        <label for="author">Who is the book author?</label>
-        <input type="input" name="author" id="author" required>
-      </div>
-      <div class="form-example">
-        <label for="pages">How many pages does the book have?</label>
-        <input type="number" name="pages" id="pages" required>
-      </div>
-      <div class="form-example">
-        <label for="checkbox">Have you read the book? </label>
-        <input type="checkbox" name="checkbox" id="checkbox" required>
-      </div>
-      <div class="form-example">
-        <input type="submit" value="Add Book!" id="submit-button">
-      </div>
-    </form>
-  </div>
-
-
-    <table id="table">
-      <colgroup span="5"></colgroup>
-      <tr >
-        <th>Title</th>
-        <th>Author</th>
-        <th>Pages</th>
-        <th>Status</th>
-        <th>Remove</th>
-      </tr>
-    </table>
+<div class="main-container">
+  <img class="bg-image" src="../assets/books-library-bg.jpg" alt="Books Library Background Image">
   
-    <!-- <img src="../assets/thumb-down-outline.png" alt="">
-    <img src="../assets/thumb-up.png" alt=""> -->
+  <div class="main-wrapper">
+    <h1 id="project-title">Library</h1>
+
+    <div id="initial-button-container">
+      <button id="start-library">Start building your library by adding a book!</button>
+    </div>
+  
+  
+    <div class="form-container">
+  
+      <form action="" method="post" class="form-example">
+        <span id="close-button">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
+        </svg>
+        </span>
+        <div class="form-example">
+          <label for="title">What is the title of the book?</label>
+          <input type="text" name="title" id="title" required>
+        </div>
+        <div class="form-example">
+          <label for="author">Who is the book author?</label>
+          <input type="input" name="author" id="author" required>
+        </div>
+        <div class="form-example">
+          <label for="pages">How many pages does the book have?</label>
+          <input type="number" name="pages" id="pages" required>
+        </div>
+        <div class="form-example">
+          <label for="checkbox">Have you read the book? </label>
+          <input type="checkbox" name="checkbox" id="checkbox" required>
+        </div>
+        <div class="form-example">
+          <input type="submit" value="Add Book!" id="submit-button">
+        </div>
+      </form>
+    </div>
+  
+  
+      <table id="table">
+        <colgroup span="5"></colgroup>
+        <tr id="first-table-row">
+          <th>Title</th>
+          <th>Author</th>
+          <th>Pages</th>
+          <th>Status</th>
+          <th>Remove</th>
+        </tr>
+      </table>
+  </div>
+  
+</div>
+
+  
 
 <script src="../src/script.js"></script>
 </body>
