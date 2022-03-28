@@ -146,3 +146,18 @@ tr.table-rows {
   padding-top: 8px;
   padding-bottom: 8px;
 }
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+footer p {
+  font-size: 20px;
+  font-weight: 500;
+}
