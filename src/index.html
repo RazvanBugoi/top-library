@@ -19,37 +19,7 @@
     <h1 id="project-title">Private Library</h1>
 
     <div id="initial-button-container">
-      <button id="start-library">Start building your library by adding a book!</button>
-    </div>
-  
-    <div class="form-container">
-  
-      <form action="" method="post" class="form-example">
-        <span id="close-button">
-          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path fill="currentColor" d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" />
-        </svg>
-        </span>
-        <div class="form-example">
-          <label for="title">What is the title of the book?</label>
-          <input class ="form-input" type="text" name="title" id="title" minlength="3" maxlength="60" required>
-        </div>
-        <div class="form-example">
-          <label for="author">Who is the book author?</label>
-          <input class ="form-input" type="input" name="author" id="author" minlength="3" maxlength="30" required>
-        </div>
-        <div class="form-example">
-          <label for="pages">How many pages does the book have?</label>
-          <input class ="form-input" type="number" name="pages" id="pages" min="1" max="999" required>
-        </div>
-        <div class="form-example">
-          <label for="checkbox">Have you read the book? </label>
-          <input type="checkbox" name="checkbox" id="checkbox">
-        </div>
-        <div class="form-example">
-          <input type="submit" value="Add Book!" id="submit-button">
-        </div>
-      </form>
+      <button id="myBtn">Start building your library by adding a book!</button>
     </div>
   
         <table id="table">
@@ -62,6 +32,46 @@
                 <th>Remove</th>
               </tr>
         </table>
+
+  </div>
+
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Add a new book</h2>
+    </div>
+    <div class="modal-body">
+      <div class="form-container">
+  
+        <form action="" method="post" class="form-example">
+          <div class="form-example">
+            <label for="title">What is the title of the book?</label>
+            <input class ="form-input" type="text" name="title" id="title" minlength="3" maxlength="60" required>
+          </div>
+          <div class="form-example">
+            <label for="author">Who is the book author?</label>
+            <input class ="form-input" type="input" name="author" id="author" minlength="3" maxlength="30" required>
+          </div>
+          <div class="form-example">
+            <label for="pages">How many pages does the book have?</label>
+            <input class ="form-input" type="number" name="pages" id="pages" min="1" max="999" required>
+          </div>
+          <div class="form-example">
+            <label for="checkbox">Have you read the book? </label>
+            <input type="checkbox" name="checkbox" id="checkbox">
+          </div>
+          <div class="form-example">
+            <input type="submit" value="Submit" id="submit-button">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
   </div>
 
