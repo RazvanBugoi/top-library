@@ -14,13 +14,22 @@ const bookPages = document.getElementById('pages')
 const bookStatus = document.getElementById('checkbox')
 
 
-function Book(title, author, noOfPages, status, id) {
-  this.title = title
-  this.author = author
-  this.noOfPages = noOfPages
-  this.status = status
-  this.id = id;
+class Book {
+  constructor(title, author, noOfPages, status, id) {
+    this.title = title
+    this.author = author
+    this.noOfPages = noOfPages
+    this.status = status
+    this.id = id
+  }
 }
+// function Book(title, author, noOfPages, status, id) {
+//   this.title = title
+//   this.author = author
+//   this.noOfPages = noOfPages
+//   this.status = status
+//   this.id = id;
+// }
 
 
 function addBookToLibrary(counter) {
